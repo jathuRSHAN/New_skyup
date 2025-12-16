@@ -9,10 +9,7 @@ export default {
       colors: {
         skyup: {
           teal: "#28c0a9",
-          purple: "#6f52ed"},
-        bubble: {
-          purple: "rgba(111, 82, 237, 0.6)", // soft purple
-          white: "rgba(255, 255, 255, 0.5)", // glowing white
+          purple: "#6f52ed",
         },
       },
       boxShadow: {

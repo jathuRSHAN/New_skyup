@@ -1,101 +1,42 @@
 import { motion } from "framer-motion";
+import { Figma, PenTool, Terminal, Sparkles } from "lucide-react";
 
-/* -------------------- Tools List -------------------- */
 const tools = [
-  {
-    title: "Canva Pro",
-    desc: "Create stunning designs with templates and premium resources.",
-    icon: "🎨",
-  },
-  {
-    title: "ChatGPT & AI Tools",
-    desc: "Boost productivity with AI-powered writing, research & coding tools.",
-    icon: "🤖",
-  },
-  {
-    title: "Notion Workspace",
-    desc: "Organize projects, notes, tasks, and workflows effortlessly.",
-    icon: "📘",
-  },
-  {
-    title: "Figma",
-    desc: "Design modern UI/UX layouts and collaborate with your team.",
-    icon: "🖌️",
-  },
-  {
-    title: "CapCut & Video Tools",
-    desc: "Edit videos, create reels, and produce content easily.",
-    icon: "🎬",
-  },
-  {
-    title: "D-ID Avatar API",
-    desc: "Generate AI avatars, video presenters, and talking characters.",
-    icon: "🧑‍💻",
-  },
-  {
-    title: "Google Workspace",
-    desc: "Professional email, documents, spreadsheets & cloud storage.",
-    icon: "📂",
-  },
-  {
-    title: "OpenStreetMap API",
-    desc: "Use mapping & location-based integrations for apps.",
-    icon: "🗺️",
-  },
+  { name: "Canva Pro", icon: <PenTool /> },
+  { name: "WordPress Premium", icon: <Terminal /> },
+  { name: "ChatGPT Pro", icon: <Sparkles /> },
+  { name: "Free Software Library", icon: <Figma /> },
+  { name: "Fiverr Freelance Tools", icon: <PenTool /> },
+  { name: "SEO Keyword Kit", icon: <Sparkles /> },
+  { name: "Adobe Illustrator", icon: <Figma /> },
+  { name: "UI/UX Templates", icon: <PenTool /> },
+  { name: "AI Tools", icon: <Sparkles /> },
 ];
-
-/* -------------------- Tools Page -------------------- */
 
 export default function Tools() {
   return (
-    <section className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20 py-20 text-white">
-      {/* Page Heading */}
+    <section className="mx-auto max-w-7xl px-4 text-white">
       <motion.h1
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="text-4xl md:text-5xl font-bold text-center mb-10"
+        transition={{ duration: 0.8 }}
+        className="text-4xl font-bold text-center mb-12"
       >
-        Tools & <span className="text-skyup-teal">Resources</span>
+        SkyUp <span className="text-skyup-teal">Tools</span>
       </motion.h1>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="text-white/70 text-center max-w-3xl mx-auto mb-16 text-lg"
-      >
-        SkyUp provides premium tools and resources to help students learn, create,
-        and build real-world projects with industry-standard software.
-      </motion.p>
-
-      {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {tools.map((tool, i) => (
           <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 25 }}
+            key={tool.name}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: i * 0.08 }}
+            transition={{ duration: 0.5, delay: i * 0.05 }}
             viewport={{ once: true }}
-            className="glass p-8 rounded-3xl backdrop-blur-md hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-col items-start"
+            className="glass flex flex-col items-center p-6 hover:scale-[1.03] transition-all"
           >
-            {/* Icon */}
-            <div className="text-4xl mb-5 bg-white/10 p-4 rounded-2xl shadow-inner">
-              {tool.icon}
-            </div>
-
-            {/* Title */}
-            <h3 className="text-xl font-semibold mb-2">{tool.title}</h3>
-
-            {/* Description */}
-            <p className="text-white/70 text-sm leading-relaxed mb-5">
-              {tool.desc}
-            </p>
-
-            <button className="btn btn-primary w-full mt-auto shadow-lg hover:shadow-skyup-teal/40">
-              Learn More
-            </button>
+            <div className="text-4xl mb-3">{tool.icon}</div>
+            <h3 className="font-semibold text-lg">{tool.name}</h3>
           </motion.div>
         ))}
       </div>
